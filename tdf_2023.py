@@ -18,9 +18,6 @@ def get_total_views_last_week(url):
     return total_views_week
 
 
-# url = 'https://www.procyclingstats.com/rider/wout-van-aert/statistics/overview'
-# wva = get_total_views_last_week(url)
-
 # Load the starting list
 df = pd.read_excel('start_list.xlsx')  # This is now the Giro list.
 df_scrape = df.copy()
