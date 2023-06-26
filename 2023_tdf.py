@@ -19,12 +19,13 @@ def get_total_views_last_week(url):
 
 
 # Load the starting list
-df = pd.read_excel('start_list.xlsx')  # This is now the Giro list.
+df = pd.read_excel(r'data/2023_06_26_tdf.xlsx')
 df_scrape = df.copy()
 df_scrape['views'] = np.zeros(len(df))
 
 for i in range(len(df)):
-    url = df['URL'][i][:-1] + str('/statistics')
+    url = df['Link'][i] + str('/statistics')
     df_scrape['views'][i] = get_total_views_last_week(url)
 
 df_scrape = df_scrape.sort_values('views', ascending=False)
+# df_scrape.to_excel('data/2023_tdf_scraped.xlsx', index=False)
