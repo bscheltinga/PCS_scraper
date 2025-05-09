@@ -14,11 +14,11 @@ def get_total_views_last_week(url):
     for item in views_diagram:
         views.append(int(item.contents[0]))
 
-    total_views_week = sum(views[-30:])  # takes the sum of the last 28 elements
+    total_views_week = sum(views[-5:])  # takes the sum of the last 28 elements
     return total_views_week
 
 # Load the starting list
-df = pd.read_excel('data/2025_05_08_giro.xlsx')
+df = pd.read_excel('data/giro_2025.xlsx')
 df_scrape = df.copy()
 df_scrape['views'] = 0  # initialize column
 
